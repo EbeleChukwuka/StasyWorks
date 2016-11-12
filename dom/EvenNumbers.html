@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+	#grade_score_text {text-align: left;
+				text-decoration: none;
+				padding: 0px 5px;
+				color: #000;
+				position: relative;
+				top: 200px;
+				left: 91px; 
+			    border-radius: 4px;
+			    position: relative;
+ 				top: 210px;
+    			left: 219px;
+				}
+	#grade_text {text-align: left;
+				text-decoration: none;
+				padding: 0px 5px;
+				color: #000;
+				position: relative;
+				top: 200px;
+				left: 91px; 
+			    border-radius: 4px;
+			    position: relative;
+ 				top: 230px;
+    			left: 219px;
+				}
+	#grade_button_s {text-align: left;
+				text-decoration: none;
+				padding: 0px 5px;
+				color: #000;
+				position: relative;
+				top: 220px;
+				left: 300px; 
+			    border-radius: 4px;
+				}
+	#grade_button_g {text-align: left;
+				text-decoration: none;
+				padding: 0px 5px;
+				color: #000;
+				position: relative;
+				top: 240px;
+				left: 350px; 
+			    border-radius: 4px;
+				}
+	#even_button {text-align: left;
+				text-decoration: none;
+				padding: 0px 5px;
+				color: #000;
+				position: relative;
+				top: 250px;
+				left: 380px; 
+			    border-radius: 4px;
+				}
+	#even {text-align: left;
+				text-decoration: none;
+				color: #000;
+				position: relative;
+				top: 200px;
+				left: -61px;
+				width: 100%; 
+				position: relative;
+				top: 240px;
+				left: 216px; }
+	#even_output { text-align: left;
+				border-radius: 12px;
+				display: block;
+				margin: 0 auto;
+				width: 8%;
+				height: 55px;
+				margin-bottom: 10px;
+				margin-top: 300px;
+				border: 1px solid #8c8c87;
+				position: relative;
+				left: 68px; 
+				overflow-y: scroll;
+				
+			}
+			
+
+</style>
+<script type="text/javascript">
+
+function showGrade(){
+	var nbr_g=document.getElementById("NbrG").value;
+	var display_score=document.getElementById("DisplayScore");
+	if (nbr_g=="a") {
+		display_score.innerHTML = "The score range is 0 to 39 <br>";
+	} else if (nbr_g=="b") {
+		display_score.innerHTML = "The score range is 40 to 44 <br>";
+	} else if (nbr_g=="c") {
+		display_score.innerHTML = "The score range is 45 to 49 <br>";
+	} else if (nbr_g=="d") {
+		display_score.innerHTML = "The score range is 50 to 69 <br>";
+	} else if (nbr_g=="f") {
+		display_score.innerHTML = "The score range is 70 to 100 <br>";
+	}
+}
+
+function showScore(){
+
+	var nbr_s=document.getElementById("NbrS").value;
+		var display_grade=document.getElementById("DisplayGrade");
+	if (nbr_s>=0 && nbr_s<=39) {
+		display_grade.innerHTML = "The grade E<br>";
+	} else if (nbr_s>=40 && nbr_s<=44) {
+		display_grade.innerHTML = "The grade D<br>";
+	} else if (nbr_s>=45 && nbr_s<=49) {
+		display_grade.innerHTML = "The grade C<br>";
+	} else if (nbr_s>=50 && nbr_s<=69) {
+		display_grade.innerHTML = "The grade B<br>";
+	} else if (nbr_s>=70 && nbr_s<=100) {
+		display_grade.innerHTML  = "The grade A<br>";
+	} else {
+		display_grade.innerHTML  = "No grade or score is available. <br>";
+	}
+}
+
+function show(){
+	//var nbr=document.getElementById("Nbr").value;	
+	var nbr1=document.getElementById("Nbr1").value;
+	var nbr2=document.getElementById("Nbr2").value;
+	//var loop=document.getElementById("Loop");
+	//var loop_grade=document.getElementById("LoopGrade");	
+	//var loop_nbr=document.getElementById("LoopNbr");
+	var display_number=document.getElementById("DisplayNumber");
+	//var display_nbr1=document.getElementById("DisplayNbr1");
+	
+	//check if value is present
+	if(nbr1=='' || nbr2==''){
+		alert('Oh boy, type something');
+	}else{
+		//iterate from the starting value supplied to the ending value supplied
+		for(i=nbr1; i<=nbr2; i++){
+			//check for even numbers as you count
+			if(even(i)){
+				display_number.innerHTML += i + ', ';
+			}
+		}
+	}
+	
+
+	/* if (nbr1%2==0) {
+		display_number.innerHTML += nbr1+ " is even" + " ";
+	}else{
+		display_number.innerHTML += nbr1+ " is odd" + " ";
+	}
+
+	*/
+	//if (nbr2%2==0) {
+	//				display_number.innerHTML += nbr2+ " is even";
+	//		}else{
+	//				display_number.innerHTML += nbr2+ " is not even";
+	//		}		
+	//
+
+}
+
+	
+///display_number.innerHTML += nbr1+"<br>";
+
+	function even(x) {
+		if (x%2==0) {
+			return true;		
+		} else {
+			return false;	
+		}
+	}
+
+
+
+</script>
+	<title></title>
+</head>
+<body>
+<div id="grade_score_text">
+<a>
+Grade: <input id="NbrG" type="text" value=""> <br> 
+</a> </div>
+<div id="grade_button_s">
+	<button id="Loop" onClick=showGrade() background-color="#6fb5ec">Get Grade Score</button>
+<p id="DisplayScore"> </p>
+</div>
+<div id="grade_text">
+<a>
+Grade Score: <input id="NbrS" type="text" value"> <br> 
+</a>	
+</div>
+<div id="grade_button_g">
+	<button id="LoopGrade" onClick=showScore() >Get Grade</button>
+<p id="DisplayGrade"> </p>
+</div>
+
+<div id="even"><a>
+Show Even Numbers For: <input id="Nbr1" type="number" value=""> to <input id="Nbr2" type="number" value=""> <br> 
+</a>
+</div>
+<div id="even_button">
+	<button id="LoopNbr" onClick=show() >Display Even Number(s)</button>
+</div>
+<div id="even_output">
+<p id="DisplayNumber"> </p>	
+
+</div>
+
+</body>
+</html>

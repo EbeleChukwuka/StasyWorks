@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO</title>
+    <link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../../bower_components/angular/angular.js"></script>
+</head>
+<body ng-controller="todoCtrl">
+<div align="center">
+
+    <div class="row" style="margin-top: 40px;">
+
+        <div class="col-lg-offset-4 col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter Todo Title" ng-model="title">
+                <span class="input-group-btn">
+        <button class="btn btn-primary" ng-click="addTodo(title)">Add TODO</button>
+      </span>
+            </div><!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+    </div><!-- /.row -->
+
+    <br>
+    <br>
+
+
+    <p>My Todo Lists</p>
+</div>
+
+<div align="center">
+    <p ng-repeat="item in todos" >
+        {{$index+1}}. {{item.title}} <span class="label label-success" ng-show="item.status"> done</span> <input type="checkbox" ng-model="item.status"> -- <span class="badge"> {{item.date | date:"dd/MM/yyyy"}} </span>
+    </p>
+
+</div>
+
+
+<script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script>
+
+    var myApp = angular.module("todoApp", []);
+
+    myApp.controller ("todoCtrl", function($scope) {
+        console.log("This is my Controller.");
+
+        /**
+         *  this holds our todo item template how it should look like
+         *  status is either true | false , where the true means the todo has been completed
+         * @type {{title: string, status: boolean, date: Date}}
+         */
+        var todo_template = {
+            title:"",
+            status:false,
+            date: new Date ()
+        };
+
+        /**
+         * this holds all my todos for me
+         * @type {Array}
+         */
+        $scope.todos = [];
+
+
+        /**
+         * this helps in adding our todo to our array of todo
+         * @param title_here
+         */
+        $scope.addTodo = function (title_here) {
+            var todo = {
+                title : title_here,
+                status : false,
+                date : new Date()
+            };
+
+            $scope.todos.push(todo);//add the todo object above to our array of todo
+
+            console.log("My Todos : ", $scope.todos);
+        };
+
+    });
+</script>
+</body>
+</html>

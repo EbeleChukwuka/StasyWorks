@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function show(){
+		var nbr=document.getElementById("Nbr").value;
+		var check=document.getElementById("Check");
+		var display_nbr=document.getElementById("DisplayNbr");
+
+		if (nbr%2==0) {
+				display_nbr.innerHTML = "The Number is even";
+		}else{
+				display_nbr.innerHTML = "The Number is not even";
+		}
+	}	
+
+</script>
+
+	<title></title>
+</head>
+<body>
+<a align="center">
+Number: <input id="Nbr" type="number" value=""> <br> <button id="Check" onClick=show() >Check Even</button>
+<p id="DisplayNbr"> </p>
+
+</a>
+</body>
+</html>

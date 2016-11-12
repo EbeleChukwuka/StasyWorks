@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Test</title>
+</head>
+<body ng-controller="nameCtrl">
+
+   <a align="center">
+    Write A Grade: <input  type="text" value="" ng-model="name"> <br> <button ng-click="my_name()">Get Grade Score Here</button>
+    <p>
+      My Name is :  {{name}}
+    </p>
+    </a>
+
+
+
+    <script src="../bower_components/angular/angular.js"></script>
+
+    <script>
+        var myApp = angular.module("App", []);
+
+        myApp.controller ("nameCtrl", function($scope) {
+
+            $scope.my_name = function () {
+                alert("This is my name :"+$scope.name);
+            }
+
+        });
+
+    </script>
+</body>
+</html>

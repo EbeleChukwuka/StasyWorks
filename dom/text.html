@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function show(){
+	var name=document.getElementById("Name").value;
+	var show_my_name=document.getElementById("Test");
+	var my_name=document.getElementById("MyName");
+
+     my_name.innerHTML = name;
+
+}
+
+</script>
+	<title></title>
+</head>
+<body>
+<p align="center">
+	Name : <input id="Name" type="text" value=""> <br> <button id="Test" onClick="show()">Show My Name</button>
+</p>
+<p id="MyName">
+
+</p>
+</body>
+</html>

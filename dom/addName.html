@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function show(){
+	var nbr=document.getElementById("Nbr").value;
+	var loop=document.getElementById("Loop");
+	var display_grade=document.getElementById("DisplayGrade");
+
+   display_grade.innerHTML += nbr+"<br>";
+}	
+
+
+</script>
+	<title></title>
+</head>
+<body>
+<a align="center">
+Add Name: <input id="Nbr" type="text" value=""> <br> <button id="Loop" onClick="show()" >Display Names</button>
+<p id="DisplayGrade"> </p>
+
+</a>
+
+</body>
+</html>

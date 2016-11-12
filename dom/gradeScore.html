@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function show(){
+	var nbr=document.getElementById("Nbr").value;
+	var loop=document.getElementById("Loop");
+	var display_grade=document.getElementById("DisplayGrade");
+
+	if (nbr>=0 && nbr<=39) {
+		display_grade.innerHTML = "The grade E<br>";
+	} else if (nbr>=40 && nbr<=44) {
+		display_grade.innerHTML = "The grade D<br>";
+	} else if (nbr>=45 && nbr<=49) {
+		display_grade.innerHTML = "The grade C<br>";
+	} else if (nbr>=50 && nbr<=69) {
+		display_grade.innerHTML = "The grade B<br>";
+	} else if (nbr>=70 && nbr<=100) {
+		display_grade.innerHTML  = "The grade A<br>";
+	} else {
+		display_grade.innerHTML  = "No grade available <br>";
+	}
+}
+
+function even(x) {
+	if (x%2==0) {
+			return true;		
+		} else {
+			return false;	
+		}
+}
+
+</script>
+	<title></title>
+</head>
+<body>
+<a align="center">
+Grade: <input id="Nbr" type="text" value=""> <br> <button id="Loop" onClick=show() >Show Score Output</button>
+<p id="DisplayGrade"> </p>
+
+</a>
+
+</body>
+</html>

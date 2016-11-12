@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+<body>
+<a align="center">
+Grade: <input id="Nbr" type="text" value=""> <br> <button id="Loop" onClick=show() >Show Score Output</button>
+<p id="DisplayGrade"> </p>
+
+</a>
+
+
+
+
+<script type="text/javascript">
+	
+var names = ["Theophilus", "Blessing", "Opeyemi"];
+var display_grade=document.getElementById("DisplayGrade");
+
+for (i=0; i<names.length; i++) {
+	//console.log ("names:", names[i]);
+	display_grade.innerHTML += "names:" + names[i] + "<br>";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function show(){
+	var nbr=document.getElementById("Nbr").value;
+	var loop=document.getElementById("Loop");
+	var display_grade=document.getElementById("DisplayGrade");
+
+switch (nbr){
+	case "a": 
+	display_grade.innerHTML = "70 to 100"; 
+	break;
+	case "b": 
+	display_grade.innerHTML = "50 to 69";
+	break;
+	case "c": 
+	display_grade.innerHTML = "45 to 49";
+	break;
+	case "d":
+	display_grade.innerHTML = "40 to 44";
+	break;
+	case "f":
+	display_grade.innerHTML = "0 to 39";
+	break;
+	default:
+	display_grade.innerHTML = "This grade does not exist";
+	break;
+}
+	
+}
+
+function even(x) {
+	if (x%2==0) {
+			return true;		
+		} else {
+			return false;	
+		}
+}
+
+</script>
+	<title></title>
+</head>
+<body>
+<a align="center">
+Grade: <input id="Nbr" type="text" value=""> <br> <button id="Loop" onClick=show() >Show Score Output</button>
+<p id="DisplayGrade"> </p>
+
+</a>
+
+</body>
+</html>

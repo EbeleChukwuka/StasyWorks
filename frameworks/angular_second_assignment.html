@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Test</title>
+
+
+</head>
+<body ng-controller="nameCtrl">
+
+<a align="center">
+    Add Name: <input  type="text" value="" ng-model="score"> <br> <button ng-click="my_name()">My Name</button>
+    <p>
+        My Score Grade is :  {{score}}
+
+        <br>
+        {{result}}
+    </p>
+
+</a>
+
+<script src="../bower_components/angular/angular.js"></script>
+
+<script>
+    var myApp = angular.module("App", []);
+
+    myApp.controller ("nameCtrl", function($scope) {
+        $scope.score = "";
+        $scope.result = undefined;
+
+        $scope.my_name = function () {
+            alert("This is my score range :"+$scope.score);
+
+            if ($scope.score>=0 && $scope.score<=39) {
+                $scope.result = "The grade E";
+            } else if ($scope.score>=40 && $scope.score<=44) {
+                $scope.result = "The grade D";
+            } else if ($scope.score>=45 && $scope.score<=49) {
+                $scope.result = "The grade C";
+            } else if ($scope.score>=50 && $scope.score<=69) {
+                $scope.result = "The grade B";
+            } else if ($scope.score>=70 && $scope.score<=100) {
+                $scope.result  = "The grade A";
+            } else {
+                $scope.result = "No grade available";
+            }
+        }
+
+
+
+
+
+
+
+    });
+
+</script>
+</body>
+</html>

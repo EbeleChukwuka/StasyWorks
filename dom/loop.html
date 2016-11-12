@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+	function show(){
+	var nbr=document.getElementById("Nbr").value;
+	var loop=document.getElementById("Loop");
+	var display_nbr=document.getElementById("DisplayNbr");
+
+for(i=1; i<=nbr; i++) {
+	if (even(i)) {
+		display_nbr.innerHTML += i + " " + "It's even <br>";
+	} else {
+		display_nbr.innerHTML += i + " " + "It's not even <br>";
+	}
+}	
+}
+
+function even(x){
+	if (x%2==0) {
+			return true;		
+		}else{
+			return false;	
+		}
+}
+
+</script>
+	<title></title>
+</head>
+<body>
+<a align="center">
+Enter Range of Numbers: <input id="Nbr" type="number" value=""> <br> <button id="Loop" onClick=show() >Check Even</button>
+<p id="DisplayNbr"> </p>
+
+</a>
+
+</body>
+</html>

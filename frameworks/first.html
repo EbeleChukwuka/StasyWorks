@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	
+</head>
+<body>
+<p align="center">
+Add Name: <input id="Nbr" type="text" value=""> <br> <button id="Loop">Display Names</button>
+<p id="DisplayGrade"> </p>
+</p>
+
+<a href="http://google.com" id="open_google">Open Google</a>
+
+
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		alert("Am Ready");
+
+		$("#Loop").click(function (event){
+				console.log("I clicked on the display name field");
+				var name = $("#Nbr").val();
+				$("#DisplayGrade").html("This is my name : <strong>"+name+"</strong>");
+		});
+
+		$("#open_google").click(function(event) {
+			/* Act on the event */
+			event.preventDefault();
+			console.log("Prevented Google From Opening");
+		});
+
+
+	});
+</script>
+</body>
+</html>
