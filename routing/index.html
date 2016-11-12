@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="route">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Sure Yet</title>
+</head>
+<body ng-controller="routeCtrl">
+<div>
+    <a ui-sref="messsge" href="javascript:void(0);">Messages</a>
+    <a ui-sref="home" href="javascript:void(0);">Home</a>
+    <a ui-sref="user" href="javascript:void(0);">User</a>
+    <span style="align:center">
+        <ui-view>
+            <p>Display Here</p>
+        <p></p>
+        </ui-view>
+
+    </span>
+
+</div>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="scripts/Home.js"></script>
+<script src="scripts/Messages.js"></script>
+<script src="scripts/User.js"></script>
+
+
+<script src="scripts/index.js"></script>
+</body>
+</html>
