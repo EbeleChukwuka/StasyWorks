@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="route">
+<head>
+    <meta charset="UTF-8">
+    <title>Not Sure Yet</title>
+</head>
+<body ng-controller="routeCtrl">
+<div>
+    <a ui-sref="facebook" href="javascript:void(0);">Facebook</a>
+    <a ui-sref="register" href="javascript:void(0);">Register</a>
+
+
+    <ui-view>
+        <p>This is my main page</p>
+    </ui-view>
+
+
+
+</div>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script src="js/facebook.js"></script>
+<script src="js/register.js"></script>
+
+
+<script src="js/index.js"></script>
+</body>
+</html>
