@@ -20,6 +20,15 @@ angular.module ('NoteBook')
             dbService.update(index, note);
         };
 
+        $scope.delete = function (index) {
+            if(!confirm ("Are you sure you want to delete this record?"))
+                return;
+            console.log("continue delete");
+
+            dbService.delete(index);
+
+        };
+
 
         $scope.loadNotes();
 

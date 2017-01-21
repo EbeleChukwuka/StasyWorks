@@ -16,7 +16,7 @@
         <td>{{note.dataCreated}}</td>
         <td>
             <button class="btn btn-xs btn-primary" ng-click="restore($index, note)"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Restore </button></button>
-            <button class="btn btn-xs btn-danger" ng-click="trashed($index, delete)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete </button></button>
+            <button class="btn btn-xs btn-danger" ng-click="delete($index)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete </button></button>
         </td>
     </tr>
     </tbody>

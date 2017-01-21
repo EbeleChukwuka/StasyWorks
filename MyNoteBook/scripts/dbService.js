@@ -26,6 +26,8 @@ angular.module('Database', ['ngStorage'])
              * @param index
              * @returns {*}
              */
+            //-----Using index can cause conflict of data. Using ID narrows the data or record to its particular own.//
+            //---An alternate and best method is the use of Primary Key //
             read: function (index) {     /*--If you exclude index, it means you are spooling all the record */
                 if (index != undefined) { //-- This means if it is not undefined //
                     return db [index];   //This index calls only one record //
@@ -39,8 +41,9 @@ angular.module('Database', ['ngStorage'])
                 $localStorage [dbName] = db; //--This saves into the database//
             },
 
-            delete: function (id) {
-                db[index] = note;
+            delete: function (index) {
+                console.log ('checking the index');
+                db.splice(index,1);  //----This deletes the selected indexed data or record from the database//
                 $localStorage [dbName] = db;
             }
 
