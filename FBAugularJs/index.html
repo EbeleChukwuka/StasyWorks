@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="FaceBook">
+    <head>
+        <title>Login</title>
+        <link href="css/facebook.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    </head>
+    <body ng-controller="facebookCtrl" style="background-color:#dcdcdc">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#42427b; color: #FFF; height: 80px">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <p style="float:left; font-size: 50px; font-family: serif; margin: 20px 110px">facebook</p>
+                </div>
+                <div id="navbar" class="collapse navbar-collapse navbar-right">
+
+                    <span style="padding: 9px; font-size: smaller;">Email Or Phone</span>
+                    <span style="padding: 53px; font-size: smaller;">Password</span> <br>
+
+                    <span style="font-size: smaller">
+                        <input type="text" title="e-mail" name="email" style="float:left; margin: -1px 8px; width:135px">
+                        <input type="password" title="pwd" name="password" style="float: left; margin: -1px 8px; width:135px">
+                        <button id="login" style="padding: 4px; background-color:#4646bf ;color: white; border: 5px;
+                        font-size: small;">Log in</button> <br>
+                    </span>
+
+                    <input type="checkbox" title="nothing" name="" style="float:left; margin: 1px 9px">
+                    <span style="padding: -8px; font-size: smaller;"> Keep me logged in</span>
+                    <span style="padding: 30px; font-size: smaller;">Forgotten your password?</span>
+                    <br> <br>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="container">
+            <div class="starter-template">
+                <ui-view>
+
+
+                </ui-view>
+            </div>
+        </div>
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="js/appFB.js"></script>
+
+    </body>
+</html>
